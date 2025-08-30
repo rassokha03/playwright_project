@@ -32,6 +32,8 @@ jobs:
           python-version: '3.13'
       - name: Install dependencies.
         run: pip install -r requirements.txt
+      - name: Install Playwright
+        run: playwright install
       - name: run all tests 
         if: "github.event.inputs.deployment_target == 'all'"
         run: pytest --alluredir=allure-results
